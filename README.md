@@ -1,5 +1,8 @@
 # 📦 Nginx Reverse Proxy with Docker Microservices
 
+> 🔗 GitHub: [https://github.com/niranjan-46](https://github.com/niranjan-46)
+
+
 A simple setup using **Nginx** as a reverse proxy for two backend microservices — one in **Go** and another in **Python** — all containerized using **Docker**.
 
 ---
