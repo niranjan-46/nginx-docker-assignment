@@ -135,6 +135,19 @@ docker-compose logs
 - **Docker**: Containerization platform
 - **Docker Compose**: Multi-container orchestration
 
+
+Troubleshooting Build Issues: 
+
+🩹 Pro tip: Clean up old or broken containers & images
+Sometimes Docker Compose tries to reuse corrupted containers or outdated images. To start fresh, run:
+
+docker-compose down -v --remove-orphans
+docker system prune -f
+Then rebuild and restart the services with:
+
+docker-compose build --no-cache
+docker-compose up
+
 ## Author
 
 **Niranjan**  
