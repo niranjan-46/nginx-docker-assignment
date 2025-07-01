@@ -140,13 +140,20 @@ Troubleshooting Build Issues:
 
 🩹 Pro tip: Clean up old or broken containers & images
 Sometimes Docker Compose tries to reuse corrupted containers or outdated images. To start fresh, run:
-
+```bash
 docker-compose down -v --remove-orphans
+```
+```bash
 docker system prune -f
+```
 Then rebuild and restart the services with:
 
+```bash
 docker-compose build --no-cache
+```
+```bash
 docker-compose up
+```
 
 ## Author
 
