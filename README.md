@@ -160,10 +160,10 @@ curl http://localhost:8080/service2/health
 
 # 📊 Metrics endpoint (Prometheus)
 curl http://localhost:8080/service2/metrics
-```
- 📁 Production Project Structure
+## 📁 Production Project Structure
 
-📂 nginx-docker-assignment/
+```text
+📦 nginx-docker-assignment/
 ├── 🐳 docker-compose.yml         # Docker Compose configuration
 ├── 📂 nginx/                     # Nginx reverse proxy setup
 │   ├── ⚙️ nginx.conf             # Nginx reverse proxy rules
@@ -177,7 +177,6 @@ curl http://localhost:8080/service2/metrics
 │   ├── 📋 requirements.txt       # Python dependencies
 │   └── 🐳 Dockerfile             # Python Dockerfile
 └── 📖 README.md                  # Project documentation
-
 ```
 
 ## ⚙️ How Production Architecture Works
