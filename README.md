@@ -164,28 +164,21 @@ curl http://localhost:8080/service2/metrics
 
 ## 📁 Production Project Structure
 
-```
 📂 nginx-docker-assignment/
-├── 🐳 docker-compose.yml         # Production orchestration
-├── 🐳 docker-compose.prod.yml    # Production overrides
-├── 📂 nginx/
-│   ├── ⚙️ nginx.conf             # Production reverse proxy config
-│   ├── 🔐 ssl/                   # SSL certificates
-│   └── 🐳 Dockerfile             # Nginx production container
+├── 🐳 docker-compose.yml         # Docker Compose configuration
+├── 📂 nginx/                     # Nginx reverse proxy setup
+│   ├── ⚙️ nginx.conf             # Nginx reverse proxy rules
+│   └── 🐳 Dockerfile             # Nginx container build
 ├── 📂 service_1/                 # Go microservice
-│   ├── 🟢 main.go                # Production Go application
-│   ├── 📦 go.mod                 # Dependencies
-│   ├── 🔧 config/                # Configuration files
-│   └── 🐳 Dockerfile             # Multi-stage production build
-├── 📂 service_2/                 # Python microservice  
-│   ├── 🐍 app.py                 # Production Python application
-│   ├── 📋 requirements.txt       # Production dependencies
-│   ├── 🔧 config/                # Configuration files
-│   └── 🐳 Dockerfile             # Production Python container
-├── 📂 monitoring/                # Production monitoring
-│   ├── 📊 prometheus.yml         # Metrics configuration
-│   └── 📈 grafana/               # Dashboard configurations
-└── 📖 README.md                  # Production documentation
+│   ├── 🟢 main.go                # Core Go application
+│   ├── 📦 go.mod                 # Go module dependencies
+│   └── 🐳 Dockerfile             # Go Dockerfile
+├── 📂 service_2/                 # Python microservice
+│   ├── 🐍 app.py                 # Python application (Flask/FastAPI)
+│   ├── 📋 requirements.txt       # Python dependencies
+│   └── 🐳 Dockerfile             # Python Dockerfile
+└── 📖 README.md                  # Project documentation
+                 # Production documentation
 ```
 
 ## ⚙️ How Production Architecture Works
