@@ -10,8 +10,8 @@ This project demonstrates how to set up a reverse proxy using Nginx to route req
 
 ```
 Client Request → Nginx (Port 8080) → Backend Services
-                     ├── /service1/* → Go Service (Port 8001)
-                     └── /service2/* → Python Service (Port 8002)
+├── /service1/* → Go Service (Port 8001)
+└── /service2/* → Python Service (Port 8002)
 ```
 
 ## Prerequisites
@@ -49,22 +49,26 @@ cd nginx-docker-assignment
 docker-compose up --build
 ```
 
+### Build & Startup (Docker Compose)
+
+![Build Stage](images/image3.png)
+
 ## Usage
 
-Once the services are running, access the application at `http://localhost:8080`.
+Once the services are running, access the application at: `http://localhost:8080`
 
 ### Testing the Services
 
-Use the following curl commands to verify routing and health checks:
+**Go Service (/service1)**:
 
-**Go Service (/service1)**
 ```bash
 curl http://localhost:8080/service1/ping
 curl http://localhost:8080/service1/hello
 curl http://localhost:8080/service1/health
 ```
 
-**Python Service (/service2)**
+**Python Service (/service2)**:
+
 ```bash
 curl http://localhost:8080/service2/ping
 curl http://localhost:8080/service2/hello
@@ -94,35 +98,43 @@ curl http://localhost:8080/service2/health
 
 **Nginx Reverse Proxy**: Nginx listens on port 8080 and routes incoming requests to the appropriate backend services based on URL paths.
 
-**Service Routing**:
 - `/service1/*` → Go service running on port 8001
 - `/service2/*` → Python service running on port 8002
 
-**Service Endpoints**: Each service provides three endpoints:
+Each service provides the following endpoints:
+
 - `/ping` — Connectivity check
 - `/hello` — Test response
-- `/health` — Health check endpoint
+- `/health` — Health check
 
-**Containerization**: All services are containerized using Docker and orchestrated via Docker Compose for easy deployment and scaling.
+**Containerization**: All services are containerized using Docker and orchestrated with Docker Compose for easy deployment.
+
+### Reverse Proxy Flow
+
+![Nginx Flow](images/image1.png)
+
+### Backend Services Routing
+
+![Service Routing](images/image2.png)
 
 ## Managing Services
 
-**Start services**:
+**Start services:**
 ```bash
 docker-compose up --build
 ```
 
-**Start services in background**:
+**Start services in background:**
 ```bash
 docker-compose up --build -d
 ```
 
-**Stop services**:
+**Stop services:**
 ```bash
 docker-compose down
 ```
 
-**View logs**:
+**View logs:**
 ```bash
 docker-compose logs
 ```
@@ -131,27 +143,18 @@ docker-compose logs
 
 - **Nginx**: Reverse proxy and load balancer
 - **Go**: High-performance backend service
-- **Python**: Backend service with Flask/FastAPI
+- **Python**: Backend service using Flask/FastAPI
 - **Docker**: Containerization platform
 - **Docker Compose**: Multi-container orchestration
 
+## Troubleshooting Build Issues
 
-Troubleshooting Build Issues: 
+If you encounter build issues, try cleaning up old containers and images:
 
-🩹 Pro tip: Clean up old or broken containers & images
-Sometimes Docker Compose tries to reuse corrupted containers or outdated images. To start fresh, run:
 ```bash
 docker-compose down -v --remove-orphans
-```
-```bash
 docker system prune -f
-```
-Then rebuild and restart the services with:
-
-```bash
 docker-compose build --no-cache
-```
-```bash
 docker-compose up
 ```
 
