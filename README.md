@@ -321,9 +321,9 @@ This architecture successfully powers:
 🏢 **Specialization**: Production Microservices, Container Orchestration, Cloud Infrastructure
 
 ### 🎯 **Professional Experience:**
-- ✅ Deployed 100+ microservices in production
+- ✅ Deployed 40+ microservices in production
 - ✅ Managed infrastructure serving 10M+ requests/day  
-- ✅ Expert in Docker, Kubernetes, AWS, Azure, GCP
+- ✅ Expert in Docker, Kubernetes, AWS, GCP
 - ✅ DevOps consultant for enterprise digital transformation
 
 ## 📜 **Production Ready**
